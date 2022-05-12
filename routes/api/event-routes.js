@@ -70,6 +70,84 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// GET /api/events/:name
+router.get("/:name", (req, res) => {
+  Event.findAll({
+    where: {
+      name: req.params.name,
+    },
+    attributes: [
+      "id",
+      "host_id",
+      "name",
+      "description",
+      "start",
+      "end",
+      "street_address",
+      "city",
+      "state",
+      "zip_code",
+      "created_at",
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ["email"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No events found with this name" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// GET /api/events/:host_id
+router.get("/:host_id", (req, res) => {
+  Event.findAll({
+    where: {
+      host_id: req.params.host_id,
+    },
+    attributes: [
+      "id",
+      "host_id",
+      "name",
+      "description",
+      "start",
+      "end",
+      "street_address",
+      "city",
+      "state",
+      "zip_code",
+      "created_at",
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ["email"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No events found with this host" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // POST /api/events
 router.post("/", (req, res) => {
   Event.create({

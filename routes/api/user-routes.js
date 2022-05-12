@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// GET /api/users/1
+// GET /api/users/:id
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
@@ -24,6 +24,27 @@ router.get("/:id", (req, res) => {
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// GET /api/users/:email
+router.get("/:email", (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      email: req.params.email,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this email" });
         return;
       }
       res.json(dbUserData);
@@ -70,7 +91,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-// PUT /api/users/1
+// PUT /api/users/:id
 router.put("/:id", (req, res) => {
   User.update(req.body, {
     individualHooks: true,
@@ -91,7 +112,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// DELETE /api/users/1
+// DELETE /api/users/:id
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {
