@@ -3,27 +3,27 @@ const Event = require("./Event");
 const GroupMember = require("./GroupMember");
 
 User.hasMany(Event, {
-  foreignKey: "user_id",
+  foreignKey: "id",
 });
 
 Event.belongsTo(User, {
-  foreignKey: "user_id",
+  foreignKey: "id",
 });
 
 User.hasMany(GroupMember, {
-  foreignKey: "user_id",
+  foreignKey: "id",
 });
 
 GroupMember.belongsTo(User, {
-  foreignKey: "user_id",
+  foreignKey: "id",
 });
 
 Event.hasMany(GroupMember, {
-  foreignKey: "event_id",
+  foreignKey: "id",
 });
 
 GroupMember.belongsTo(Event, {
-  foreignKey: "event_id",
+  foreignKey: "id",
 });
 
 module.exports = { User, Event, GroupMember };
