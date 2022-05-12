@@ -1,0 +1,51 @@
+<!--Nav bar-->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="title navbar-brand" href="#">
+            <img src="/imgs/GroupIt Logo (1).svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            GroupIt
+        </a>
+    </div>
+</nav>
+
+
+<!--create event-->
+<div class="login-form create-event-form container-md">
+    <form class="row g-3">
+        <div class="mb-3">
+            <label for="Event-name" class="event-name-text form-label">Event Name:</label>
+            <input type="text" class="event-name-input form-control" id="event-name-input" aria-describedby="event-name-input">
+        </div>
+<!-- date picker-->
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Event Description:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Address:</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">City:</label>
+            <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">State:</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip:</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="d-grid gap-2">
+            <button type="button" id="create-evet-btn" class="create-event-btn btn btn-primary">Create Event</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+        
+</footer>
