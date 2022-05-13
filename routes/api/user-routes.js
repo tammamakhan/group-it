@@ -68,6 +68,7 @@ router.post("/", (req, res) => {
     });
 });
 
+// POST /api/users/login
 router.post("/login", (req, res) => {
   User.findOne({
     where: {

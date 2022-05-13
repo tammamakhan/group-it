@@ -54,6 +54,64 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// GET /api/groupmembers/member_id
+router.get("/:member_id", (req, res) => {
+  GroupMember.findAll({
+    where: {
+      member_id: req.params.member_id,
+    },
+    attributes: ["group_id"],
+    include: [
+      {
+        model: Event,
+        attributes: ["name"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res
+          .status(404)
+          .json({ message: "No group members found with this member_id" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// GET /api/groupmembers/group_id
+router.get("/:group_id", (req, res) => {
+  GroupMember.findAll({
+    where: {
+      member_id: req.params.member_id,
+    },
+    attributes: ["member_id"],
+    include: [
+      {
+        model: User,
+        attributes: ["email"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res
+          .status(404)
+          .json({ message: "No group members found with this group_id" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // POST /api/groupmembers
 router.post("/", (req, res) => {
   GroupMember.create({
