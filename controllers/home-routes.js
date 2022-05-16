@@ -53,9 +53,19 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
+
+router.get('/create-event', (req, res) => {
+     res.render('create-event');
+});
+
+router.get('/about', (req, res) => {
+  res.render('about');
+});
 router.get('/home-page', (req, res) => {
   res.redirect('/');
 });
+
+
 
 
 module.exports = router; 
