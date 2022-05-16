@@ -31,6 +31,6 @@ First you should go ahead and create a login, and then log out to make you can l
 # Questions
 Here is the following information to reach the creator:
 
-- Github Username: [sauln179](https://github.com/sauln179) [tammamakhan](https://github.com/tammamakhan) [jesus1881](https://github.com/jesus1881) 
-- Email Address: saulnavarro179@gmail.com 
+- Github Username: [sauln179](https://github.com/sauln179)
+
 
