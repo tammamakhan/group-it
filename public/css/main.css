@@ -1,0 +1,48 @@
+:root{
+    --primary-color: #174690;
+    --secondary-color: #587291;
+    --third-color: #e0e5f4;
+    --fourth-color: #0d1821;
+    --fifth-color: #040f0f;
+}
+
+
+body{
+    background: radial-gradient(var(--primary-color),var(--fifth-color) , transparent);
+}
+
+.navbar{
+    background-color: var(--primary-color);
+    border-bottom: 3px solid var(--fifth-color);
+}
+
+.login-form{
+    border: 2px solid var(--fifth-color);
+    background-color: var(--third-color);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-top: 10rem;
+    border-radius: 10px;
+}
+
+.login-btn  {
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    border-top: solid 3px var(--fifth-color);
+}
+
+.footer-content{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    justify-content: center;
+}
