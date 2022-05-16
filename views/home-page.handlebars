@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="title navbar-brand" href="#">
+            <img src="/imgs/GroupIt Logo (1).svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            GroupIt
+        </a>
+        {{#if loggedIn}}
+        <a class="link" href="/" id="logout">logout</a> 
+        <a class="link" href="/create-event" id="create-event">Create Event</a> 
+        {{else}}
+        <a class="link" href="/login">login</a>
+        {{/if}}
+    </div>
+  
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid">
+    
+        <div class="container">
+          <h1 class="display-4">Hello there ! </h1>
+          <p class="lead">Welcome to GroupIt</p>
+        </div>
+      </div>
+<div class="card">
+
+{{#each events as |event| }}
+    {{> event-info event}}
+  {{/each}}
+
+ </div>
