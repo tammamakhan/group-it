@@ -1,29 +1,43 @@
 const express = require('express');
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
+const path = require('path');
 const exphbs = require('express-handlebars');
-const app = express();
 
-// Configure template Engine and Main Template File
+const session = require('express-session');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {maxAge: 36000},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+//Sets handlebars as template
 app.engine('handlebars', exphbs.engine({
     defaultLayout: 'main',
     extname: '.handlebars'
 }));
-// Setting template Engine
 app.set('view engine', 'handlebars');
+//Use Routes
+app.use(routes);
 
-// routes
-app.get('/', (req, res) => {
-    res.render('home-base');
-});
-app.get('/about-us', (req, res) => {
-    res.render('about-us');
-});
-app.get('/home-base', (req, res) => {
-    res.render('home-base');
-});
-app.get('/signup', (req, res) => {
-    res.render('signup');
-});
-// port where app is served
-app.listen(3001, () => {
-    console.log('The web server has started on port 3000');
+ 
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
