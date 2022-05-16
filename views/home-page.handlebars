@@ -1,36 +1,32 @@
+
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="title navbar-brand" href="#">
             <img src="/imgs/GroupIt Logo (1).svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
             GroupIt
         </a>
+        {{#if loggedIn}}
+        <a class="link" href="/" id="logout">logout</a> 
+        <a class="link" href="/create-event" id="create-event">Create Event</a> 
+        {{else}}
+        <a class="link" href="/login">login</a>
+        {{/if}}
     </div>
+  
 </nav>
 
 
 <div class="jumbotron jumbotron-fluid">
+    
         <div class="container">
-          <h1 class="display-4">Image Goes Here</h1>
-          <p class="lead">This is where image goes.</p>
+          <h1 class="display-4">Hello there ! </h1>
+          <p class="lead">Welcome to GroupIt</p>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header">
-          Recent Created Events
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Festival at Emmeryvile</h5>
-          <p class="card-text">There will a cultural festival at Emmeryvile.</p>
-          <a href="#" class="btn btn-primary">Join</a>
-        </div>
-      </div>
-      <div class="card">
-            <div class="card-header">
-              Recent Event Created
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Come to a public picnic.</p>
-              <a href="#" class="btn btn-primary">Join</a>
-            </div>
-          </div>
+<div class="card">
+
+{{#each events as |event| }}
+    {{> event-info event}}
+  {{/each}}
+
+ </div>
