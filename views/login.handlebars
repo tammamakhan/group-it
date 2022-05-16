@@ -1,40 +1,25 @@
-<!--Nav bar-->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="title navbar-brand" href="#">
-                <img src="/imgs/GroupIt Logo (1).svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="title navbar-brand" href="#">
+            <img src="/imgs/GroupIt Logo (1).svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
             GroupIt
-            </a>
-        </div>
-    </nav>
-
-    <!--log in-->
-    <div class="login-form container-md">
-    <!--<div class="card" style="width: 18rem;">-->
-        <form id ="loginForm">
-        <div class="mb-3">
-            <label for="InputEmail1" class="email-text form-label">Email address:</label>
-            <input type="text" class="form-control" id="email-login" aria-describedby="email">
-            <div class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="InputPassword" class="password-text form-label">Password:</label>
-            <input type="text" class="form-control" id="password-login">
-        </div>
-        <div class="d-grid gap-2">
-            <button type="submit" id="login-btn" class="login-btn btn btn-primary">Log in</button>
-        </div>
-        <div class="mb-3">
-            <a href="/signup">
-            <button type="button" id="sign-up-btn" class="sign-up-btn btn btn-secondary btn-sm" ><a href="/signup"> Sign Up </a></button>
-            </a>
-            <label class="sign-up-text form-check-label" for="sign-up">Not a member sign up today! </label>
-        </div>
-        </form>
-        <!--</div>-->
+        </a>
     </div>
+</nav>
 
-    <footer>
-        
-    </footer>
-    <script src="/javascript/login.js"></script>
+
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Image Goes Here</h1>
+          <p class="lead">This is where image goes.</p>
+        </div>
+      </div>
+      
+<div class="card">
+
+{{#each events as |event| }}
+    {{> event-info event}}
+  {{/each}}
+
+ </div>
