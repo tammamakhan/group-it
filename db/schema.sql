@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS group_it_db;
+
+CREATE DATABASE group_it_db;
