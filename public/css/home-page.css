@@ -1,0 +1,11 @@
+@import url(/public/css/login.css);
+
+.jhello-div{
+    background: -webkit-linear-gradient(110deg, var(--secondary-color)40%, var(--third-color) 40%);
+    margin-bottom: 0px;
+}
+
+.wgi-text{
+    padding-bottom: .5rem;
+    margin-bottom: 0px;
+}

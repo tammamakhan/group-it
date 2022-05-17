@@ -1,0 +1,16 @@
+@import url(/public/css/login.css);
+
+.sign-up-form{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 10px;
+    border: 2px solid var(--fifth-color);
+    background-color: var(--third-color);
+}
+
+.su-footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
