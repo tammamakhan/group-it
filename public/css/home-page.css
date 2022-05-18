@@ -5,6 +5,10 @@
     margin-bottom: 0px;
 }
 
+.main-card{
+    border-bottom: solid 2px var(--fourth-color);
+}
+
 .wgi-text{
     padding-bottom: .5rem;
     margin-bottom: 0px;

@@ -1,3 +1,5 @@
+@import url(/public/css/login.css);
+
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -16,3 +18,17 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
+
+.main-cont{
+    margin-top: 1.5rem;
+    border: solid 2px var(--fourth-color);
+    border-radius: 2%;
+}
+
+.about-containers{
+    background-color: var(--third-color);
+}
+
+.creators-div{
+    background-color: var(--secondary-color);
+}

@@ -1,0 +1,9 @@
+@import url(/public/css/login.css);
+
+.event-card-header{
+    background: var(--secondary-color);
+}
+
+.main-card{
+    background: var(--third-color);
+}
