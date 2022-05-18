@@ -1,0 +1,14 @@
+@import url(/public/css/login.css);
+
+.create-event-form{
+    margin-bottom: 2.5rem;
+}
+
+
+.ce-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+}
