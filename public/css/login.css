@@ -8,8 +8,9 @@
 
 
 body{
-    background: radial-gradient(var(--primary-color),var(--fifth-color) , transparent);
-    
+    background-image: linear-gradient(to bottom right, var(--secondary-color), var(--third-color));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .navbar{
@@ -44,6 +45,5 @@ body{
 .footer-content{
     display: flex;
     text-align: left;
-    justify-content: center;
     justify-content: center;
 }

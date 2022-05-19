@@ -13,3 +13,21 @@
     padding-bottom: .5rem;
     margin-bottom: 0px;
 }
+
+.login-nav-text:hover{
+    padding: 5px;
+    border: solid 2px var(--third-color);
+    border-radius: 2.5px;
+}
+
+.logout-nav-text:hover{
+    padding: 5px;
+    border: solid 2.5px var(--third-color);
+    border-radius: 2.5px;
+}
+
+.create-nav-text:hover{
+    padding: 5px;
+    border: solid 2.5px var(--third-color);
+    border-radius: 2.5px;
+}

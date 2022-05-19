@@ -1,40 +1,38 @@
 
-<nav class="navbar navbar-light">
+<nav class="navbar">
     <div class="container-fluid">
         <a class="title navbar-brand fs-2 text-white" href="#">
             <img src="/imgs/GroupIt Logo (1).svg" alt="" width="80" height="45" class="d-inline-block align-text-top">
             GroupIt
         </a>
         {{#if loggedIn}}
-        <a class="link text-decoration-none text-white" href="/" id="logout">Logout</a> 
-        <a class="link text-decoration-none text-white" href="/create-event" id="create-event">Create Event</a> 
+        <a class="logout-nav-text link text-decoration-none text-white" href="/" id="logout">Logout</a> 
+        <a class="create-nav-text link text-decoration-none text-white" href="/create-event" id="create-event">Create Event</a> 
         {{else}}
-        <a class="link text-decoration-none text-white" href="/login">Login</a>
+        <a class="login-nav-text link text-decoration-none text-white" href="/login">Login</a>
         {{/if}}
     </div>
-  
 </nav>
 
 
 <div class="jhello-div jumbotron jumbotron-fluid">
-    
-        <div class="container">
-          <h1 class="display-4">Hello there ! </h1>
-          <p class="lead wgi-text">Welcome to GroupIt</p>
-        </div>
-      </div>
-<div class="card">
+  <div class="container">
+    <h1 class="display-4">Hello there ! </h1>
+    <p class="lead wgi-text">Welcome to GroupIt</p>
+  </div>
+</div>
 
+
+<div class="card">
 {{#each events as |event| }}
     {{> event-info event}}
   {{/each}}
-
- </div>
+</div>
 
 
 <footer class="footer">
   <div class="container-fluid">
-    <a class="footer-content title fs-6 navbar-brand" href="#">
+    <a class="footer-content title fs-6 navbar-brand" href="/about">
     <img src="/imgs/GroupIt Logo (1).svg" alt="" width="60" height="45" class="d-inline-block align-text-top"/>
     © 2022 GroupIt</a>
   </div>
